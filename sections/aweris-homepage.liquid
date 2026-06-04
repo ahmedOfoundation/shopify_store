@@ -1,0 +1,1162 @@
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  #shopify-section-{{ section.id }} {
+    --aweris-orange: #E94E1A;
+    --aweris-yellow: #E9E11E;
+    --aweris-blue: #3B4058;
+    --aweris-cream: #F4EEDF;
+    --aweris-cream-light: #fbf5ea;
+    --aweris-card: #fffdf8;
+    --aweris-text: #3B4058;
+    --aweris-muted: #667086;
+    --aweris-line: rgba(59, 64, 88, .18);
+    --aweris-shadow: 0 22px 54px rgba(59, 64, 88, .12);
+    color: var(--aweris-text);
+    background: var(--aweris-cream-light);
+    font-family: var(--font-body--family);
+  }
+
+  #shopify-section-{{ section.id }} * {
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-page {
+    min-height: 100vh;
+    background: var(--aweris-cream-light);
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-container {
+    width: min(1140px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(251, 245, 234, .94);
+    border-bottom: 1px solid rgba(59, 64, 88, .12);
+    backdrop-filter: blur(14px);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-nav {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-logo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: var(--aweris-orange);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: .86;
+    letter-spacing: -.06em;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-logo::before,
+  #shopify-section-{{ section.id }} .aweris-logo::after {
+    content: "";
+    position: absolute;
+    background: var(--aweris-yellow);
+    border-radius: 70% 30% 60% 40%;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-logo::before {
+    width: 18px;
+    height: 12px;
+    left: 6px;
+    top: -5px;
+    transform: rotate(18deg);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-logo::after {
+    width: 16px;
+    height: 14px;
+    right: 5px;
+    top: 8px;
+    transform: rotate(-8deg);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-menu {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-menu a,
+  #shopify-section-{{ section.id }} .aweris-login-summary,
+  #shopify-section-{{ section.id }} .aweris-login-option {
+    color: var(--aweris-blue);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-menu a,
+  #shopify-section-{{ section.id }} .aweris-login-summary {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 14px;
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-summary {
+    border: 2px solid var(--aweris-blue);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-summary::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-left: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    display: grid;
+    gap: 8px;
+    min-width: 220px;
+    padding: 10px;
+    background: var(--aweris-card);
+    border: 1px solid var(--aweris-line);
+    border-radius: 8px;
+    box-shadow: var(--aweris-shadow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-option {
+    width: 100%;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 6px;
+    background: rgba(244, 238, 223, .76);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-option:hover,
+  #shopify-section-{{ section.id }} .aweris-menu a:hover {
+    background: rgba(233, 78, 26, .1);
+  }
+
+  #shopify-section-{{ section.id }} h1,
+  #shopify-section-{{ section.id }} h2,
+  #shopify-section-{{ section.id }} h3,
+  #shopify-section-{{ section.id }} p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-kicker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: var(--aweris-orange);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-kicker::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--aweris-orange);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-hero {
+    padding: 116px 0 84px;
+    background:
+      radial-gradient(circle at 88% 18%, rgba(233, 78, 26, .1), transparent 28%),
+      radial-gradient(circle at 12% 12%, rgba(233, 225, 30, .18), transparent 24%),
+      var(--aweris-cream-light);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .74fr);
+    gap: clamp(44px, 7vw, 92px);
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} h1 {
+    max-width: 720px;
+    color: var(--aweris-blue);
+    font-family: var(--font-heading--family);
+    font-size: clamp(46px, 6.6vw, 76px);
+    line-height: .98;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-highlight {
+    position: relative;
+    color: var(--aweris-orange);
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-highlight::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: .08em;
+    height: .14em;
+    background: var(--aweris-yellow);
+    z-index: -1;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-lead {
+    max-width: 690px;
+    margin-top: 26px;
+    color: var(--aweris-muted);
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.58;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-actions,
+  #shopify-section-{{ section.id }} .aweris-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-actions {
+    margin-top: 34px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button {
+    min-height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    border: 2px solid var(--aweris-blue);
+    color: var(--aweris-blue);
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button-primary {
+    border-color: var(--aweris-orange);
+    background: var(--aweris-orange);
+    color: #fff;
+    box-shadow: 0 18px 34px rgba(233, 78, 26, .22);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-trust {
+    margin-top: 30px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-trust span {
+    position: relative;
+    max-width: 260px;
+    padding-left: 24px;
+    color: var(--aweris-muted);
+    font-weight: 700;
+    line-height: 1.55;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-trust span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .7em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--aweris-orange);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-visual {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile {
+    position: relative;
+    min-height: 150px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(59, 64, 88, .18);
+    box-shadow: var(--aweris-shadow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile:nth-child(1) {
+    background: var(--aweris-orange);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile:nth-child(2) {
+    margin-top: 22px;
+    background: var(--aweris-blue);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile:nth-child(3) {
+    background: #e89b22;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile:nth-child(4) {
+    margin-top: 18px;
+    background: #eebc9d;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile:nth-child(5) {
+    background: var(--aweris-yellow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-tile:nth-child(6) {
+    margin-top: 18px;
+    background: #c73918;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-flower,
+  #shopify-section-{{ section.id }} .aweris-flower::before,
+  #shopify-section-{{ section.id }} .aweris-flower::after {
+    position: absolute;
+    content: "";
+    border-radius: 62% 38% 58% 42%;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-flower {
+    width: 74px;
+    height: 102px;
+    right: 18px;
+    bottom: -22px;
+    background: rgba(244, 238, 223, .7);
+    transform: rotate(18deg);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-flower::before {
+    width: 82px;
+    height: 62px;
+    right: 44px;
+    bottom: 40px;
+    background: rgba(233, 225, 30, .72);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-flower::after {
+    width: 76px;
+    height: 76px;
+    right: -38px;
+    bottom: 54px;
+    background: rgba(59, 64, 88, .72);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-product-card {
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    right: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(255, 253, 248, .86);
+    color: var(--aweris-blue);
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-section {
+    padding: 86px 0;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
+    gap: clamp(38px, 6vw, 82px);
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-section h2 {
+    max-width: 680px;
+    color: var(--aweris-blue);
+    font-family: var(--font-heading--family);
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.05;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-section-copy {
+    max-width: 720px;
+    margin-top: 18px;
+    color: var(--aweris-muted);
+    font-size: 20px;
+    line-height: 1.65;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-points {
+    display: grid;
+    gap: 22px;
+    margin-top: 36px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-point {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: #fff;
+    color: var(--aweris-orange);
+    box-shadow: 0 10px 24px rgba(59, 64, 88, .1);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-point strong,
+  #shopify-section-{{ section.id }} .aweris-security-card strong {
+    display: block;
+    color: var(--aweris-blue);
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-point p {
+    margin-top: 7px;
+    color: var(--aweris-muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-principle {
+    position: relative;
+    padding: 42px;
+    border-radius: 24px;
+    background: var(--aweris-blue);
+    color: #fff;
+    overflow: hidden;
+    box-shadow: var(--aweris-shadow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-principle p {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 900;
+    line-height: 1.28;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-principle em {
+    color: var(--aweris-yellow);
+    font-style: normal;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-principle::after {
+    content: "";
+    position: absolute;
+    right: -64px;
+    bottom: -76px;
+    width: 260px;
+    height: 260px;
+    border: 14px solid rgba(233, 78, 26, .18);
+    border-radius: 58% 42% 52% 48%;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-principle-label {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 26px;
+    color: rgba(255, 255, 255, .86);
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-principle-label::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--aweris-orange);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-features {
+    background: var(--aweris-cream);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-centered {
+    max-width: 620px;
+    margin: 0 auto 44px;
+    text-align: center;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-centered .aweris-kicker {
+    justify-content: center;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-centered .aweris-kicker::before {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-card {
+    min-height: 208px;
+    padding: 24px;
+    border: 1px solid rgba(59, 64, 88, .16);
+    border-radius: 8px;
+    background: var(--aweris-card);
+    box-shadow: 0 14px 36px rgba(59, 64, 88, .07);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-card h3 {
+    color: var(--aweris-blue);
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-card p {
+    margin-top: 9px;
+    color: var(--aweris-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-number {
+    color: var(--aweris-muted);
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(340px, 1fr);
+    gap: clamp(32px, 5vw, 70px);
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-panel {
+    padding: 44px;
+    border-radius: 18px;
+    background: var(--aweris-blue);
+    color: #fff;
+    box-shadow: var(--aweris-shadow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-panel h2,
+  #shopify-section-{{ section.id }} .aweris-security-panel p {
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-panel p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .86);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-checks {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-checks span {
+    color: #fff;
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-checks span::before {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: var(--aweris-yellow);
+    vertical-align: -1px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-cards {
+    display: grid;
+    gap: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-card {
+    padding: 24px;
+    border: 1px solid rgba(59, 64, 88, .16);
+    border-radius: 8px;
+    background: var(--aweris-card);
+    box-shadow: 0 14px 36px rgba(59, 64, 88, .08);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-security-card p {
+    margin-top: 9px;
+    color: var(--aweris-muted);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: var(--aweris-blue);
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-toggle::before {
+    content: "";
+    width: 30px;
+    height: 16px;
+    border-radius: 999px;
+    background: var(--aweris-orange);
+    box-shadow: inset 14px 0 0 rgba(255, 255, 255, .85);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact {
+    background: var(--aweris-blue);
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .82fr) minmax(360px, 1fr);
+    gap: clamp(40px, 7vw, 92px);
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact h2,
+  #shopify-section-{{ section.id }} .aweris-contact p {
+    color: #fff;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact .aweris-kicker {
+    color: var(--aweris-yellow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact .aweris-kicker::before {
+    background: var(--aweris-yellow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact-text {
+    margin-top: 18px;
+    max-width: 520px;
+    color: rgba(255, 255, 255, .86);
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact-details {
+    display: grid;
+    gap: 14px;
+    margin-top: 34px;
+    color: #fff;
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact-details span::before {
+    content: "";
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    border-radius: 8px;
+    background: rgba(233, 225, 30, .16);
+    vertical-align: middle;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 32px;
+    border-radius: 18px;
+    background: var(--aweris-card);
+    box-shadow: var(--aweris-shadow);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-field {
+    display: grid;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-field-wide {
+    grid-column: 1 / -1;
+  }
+
+  #shopify-section-{{ section.id }} label {
+    color: var(--aweris-blue);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  #shopify-section-{{ section.id }} input,
+  #shopify-section-{{ section.id }} textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid rgba(233, 78, 26, .4);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--aweris-blue);
+    font: inherit;
+  }
+
+  #shopify-section-{{ section.id }} textarea {
+    min-height: 116px;
+    resize: vertical;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-submit {
+    grid-column: 1 / -1;
+    min-height: 52px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--aweris-orange);
+    color: #fff;
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(233, 78, 26, .22);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-form-status {
+    grid-column: 1 / -1;
+    color: var(--aweris-blue);
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer {
+    padding: 48px 0 34px;
+    background: var(--aweris-cream);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: clamp(36px, 8vw, 110px);
+    align-items: start;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-copy {
+    max-width: 260px;
+    margin-top: 14px;
+    color: var(--aweris-blue);
+    font-weight: 800;
+    line-height: 1.5;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-copy span {
+    color: var(--aweris-orange);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-title {
+    margin-bottom: 14px;
+    color: var(--aweris-muted);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-links {
+    display: grid;
+    gap: 10px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer a,
+  #shopify-section-{{ section.id }} .aweris-footer-login {
+    color: var(--aweris-blue);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-login {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(59, 64, 88, .14);
+    color: var(--aweris-muted);
+    font-size: 12px;
+  }
+
+  @media screen and (max-width: 940px) {
+    #shopify-section-{{ section.id }} .aweris-hero-grid,
+    #shopify-section-{{ section.id }} .aweris-about-grid,
+    #shopify-section-{{ section.id }} .aweris-security-grid,
+    #shopify-section-{{ section.id }} .aweris-contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-feature-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    #shopify-section-{{ section.id }} .aweris-container {
+      width: min(100% - 28px, 1140px);
+    }
+
+    #shopify-section-{{ section.id }} .aweris-nav {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 14px 0;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-menu {
+      width: 100%;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-menu a,
+    #shopify-section-{{ section.id }} .aweris-login-summary {
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-login-panel {
+      left: 0;
+      right: auto;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-hero {
+      padding: 74px 0 58px;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-visual,
+    #shopify-section-{{ section.id }} .aweris-feature-grid,
+    #shopify-section-{{ section.id }} .aweris-form,
+    #shopify-section-{{ section.id }} .aweris-footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-tile {
+      min-height: 132px;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-section {
+      padding: 62px 0;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-security-panel,
+    #shopify-section-{{ section.id }} .aweris-principle,
+    #shopify-section-{{ section.id }} .aweris-form {
+      padding: 24px;
+    }
+
+    #shopify-section-{{ section.id }} .aweris-footer-bottom {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<div class="aweris-page" id="home">
+  <header class="aweris-header">
+    <div class="aweris-container aweris-nav">
+      <a class="aweris-logo" href="#home" aria-label="Aweris home">Aweris</a>
+      <nav class="aweris-menu" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <details class="aweris-login">
+          <summary class="aweris-login-summary">Login</summary>
+          <div class="aweris-login-panel" role="group" aria-label="Login destinations">
+            <button class="aweris-login-option" type="button">Bookkeeping App</button>
+            <button class="aweris-login-option" type="button">Psychologists App</button>
+            <button class="aweris-login-option" type="button">Client App</button>
+          </div>
+        </details>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="aweris-hero" aria-labelledby="aweris-hero-title">
+      <div class="aweris-container aweris-hero-grid">
+        <div>
+          <p class="aweris-kicker">For GGZ &amp; mental healthcare practices</p>
+          <h1 id="aweris-hero-title">Automate the <span class="aweris-highlight">administrative</span> workload of your mental healthcare practice</h1>
+          <p class="aweris-lead">Aweris helps GGZ and psychology practices automate bookkeeping, questionnaires, reporting, email handling, scheduling, dashboards, and client support &mdash; securely within their own environment.</p>
+          <div class="aweris-actions">
+            <a class="aweris-button aweris-button-primary" href="#contact">Contact us</a>
+            <a class="aweris-button" href="#features">See what it does</a>
+          </div>
+          <div class="aweris-trust">
+            <span>Runs inside your own secure infrastructure</span>
+            <span>You stay in control of every report</span>
+          </div>
+        </div>
+
+        <div class="aweris-visual" aria-hidden="true">
+          <div class="aweris-tile"><span class="aweris-product-card">Bookkeeping inside Exact</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Human approval required</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Questionnaires through Zivver</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Secure client support</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Workflow dashboards</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Session reports for review</span><span class="aweris-flower"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="aweris-section" id="what-is-aweris" aria-labelledby="aweris-about-title">
+      <div class="aweris-container aweris-about-grid">
+        <div>
+          <p class="aweris-kicker">What is Aweris?</p>
+          <h2 id="aweris-about-title">A smart automation platform built around your practice</h2>
+          <p class="aweris-section-copy">Aweris is a smart automation platform for GGZ and mental healthcare practices. It helps practices reduce repetitive administrative work, improve workflow efficiency, and free up more time for client care.</p>
+          <p class="aweris-section-copy">The platform supports electronic patient file workflows, session reporting, accounting, questionnaires, client communication, scheduling, dashboards, and customized workflow automation.</p>
+          <div class="aweris-points">
+            <div class="aweris-point">
+              <span class="aweris-icon">01</span>
+              <div>
+                <strong>Less repetition</strong>
+                <p>Hand the routine, repeatable admin tasks to automation that learns from your practice.</p>
+              </div>
+            </div>
+            <div class="aweris-point">
+              <span class="aweris-icon">02</span>
+              <div>
+                <strong>You stay in control</strong>
+                <p>AI supports the work, but the professional always decides what goes into reports and client communication.</p>
+              </div>
+            </div>
+            <div class="aweris-point">
+              <span class="aweris-icon">03</span>
+              <div>
+                <strong>More time for care</strong>
+                <p>Clinicians and support staff get hours back to spend where it matters: with clients.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="aweris-principle">
+          <p>&ldquo;AI and automation support the work &mdash; but the <em>healthcare professional</em> always decides what is included in clinical reports and client communication.&rdquo;</p>
+          <span class="aweris-principle-label">The Aweris operating principle</span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="aweris-section aweris-features" id="features" aria-labelledby="aweris-features-title">
+      <div class="aweris-container">
+        <div class="aweris-centered">
+          <p class="aweris-kicker">Everything in one platform</p>
+          <h2 id="aweris-features-title">Built for the real work of a practice</h2>
+          <p class="aweris-section-copy">Each function is designed to remove a specific piece of administrative load, and new functions are added regularly.</p>
+        </div>
+        <div class="aweris-feature-grid">
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">01</span><span class="aweris-number">01</span></div>
+            <h3>Automatic bookkeeping in Exact</h3>
+            <p>Invoices can be photographed or uploaded and then automatically processed in the practice's Exact environment. The system is self-learning and improves based on previous bookings.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">02</span><span class="aweris-number">02</span></div>
+            <h3>Questionnaires and diagnostics</h3>
+            <p>Send CQI, ROM, diagnostic, and practice-specific questionnaires automatically and securely through Zivver.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">03</span><span class="aweris-number">03</span></div>
+            <h3>Automated email support</h3>
+            <p>Automate a large share of incoming emails, including general questions, non-treatment-related care questions, and many internal staff questions.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">04</span><span class="aweris-number">04</span></div>
+            <h3>Calling and scheduling automation</h3>
+            <p>Support calls, appointment planning, reminders, and follow-ups. Clients can be contacted at suitable times, including outside office hours when useful.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">05</span><span class="aweris-number">05</span></div>
+            <h3>Session reporting</h3>
+            <p>Support reports for intakes, anamnesis, ADHD assessments, autism assessments, general mental healthcare, specialist mental healthcare, and regular sessions.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">06</span><span class="aweris-number">06</span></div>
+            <h3>Client app and dossier access</h3>
+            <p>Clients can access their dossier and relevant information through the client area of the app.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">07</span><span class="aweris-number">07</span></div>
+            <h3>Personalized homework and e-health</h3>
+            <p>Generate tailored homework and e-health content based on therapy sessions and session reports, then send it to the client.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">08</span><span class="aweris-number">08</span></div>
+            <h3>Lifestyle support</h3>
+            <p>Support clients with exercise and movement. Future functions can also support sleep improvement and nutrition improvement.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">09</span><span class="aweris-number">09</span></div>
+            <h3>Secretariat dashboards</h3>
+            <p>Create dashboards for the secretariat to monitor automated workflows and check whether tasks are running correctly.</p>
+          </article>
+          <article class="aweris-card">
+            <div class="aweris-card-top"><span class="aweris-icon">10</span><span class="aweris-number">10</span></div>
+            <h3>Custom automation</h3>
+            <p>Add custom workflows when needed. The current platform already includes several functions, and new functions are added regularly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="aweris-section" id="security" aria-labelledby="aweris-security-title">
+      <div class="aweris-container aweris-security-grid">
+        <div class="aweris-security-panel">
+          <p class="aweris-kicker">Security &amp; operating model</p>
+          <h2 id="aweris-security-title">Runs within your own secure environment</h2>
+          <p>Aweris is designed to run within the practice's own systems and secure environment. The platform can be operated remotely while keeping the practice's data and workflows inside its own infrastructure.</p>
+          <div class="aweris-checks">
+            <span>The professional decides</span>
+            <span>Human approval required</span>
+            <span>Remote-operated, locally held</span>
+            <span>Data stays on-premise</span>
+          </div>
+          <p>Final privacy, security, and legal wording should be reviewed before publication.</p>
+        </div>
+        <div class="aweris-security-cards">
+          <article class="aweris-security-card">
+            <strong>The professional decides</strong>
+            <p>Nothing reaches a client or a clinical report without a human signing off first.</p>
+            <span class="aweris-toggle">Human approval required</span>
+          </article>
+          <article class="aweris-security-card">
+            <strong>Remote-operated, locally held</strong>
+            <p>We can run and maintain the platform for you, while your infrastructure stays the single source of truth.</p>
+            <span class="aweris-toggle">Data stays on-premise</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="aweris-section aweris-contact" id="contact" aria-labelledby="aweris-contact-title">
+      <div class="aweris-container aweris-contact-grid">
+        <div>
+          <p class="aweris-kicker">Get in touch</p>
+          <h2 id="aweris-contact-title">Interested in automating your practice's admin?</h2>
+          <p class="aweris-contact-text">Leave your details and we'll contact you to talk through how Aweris fits your practice. No obligation.</p>
+        </div>
+
+        {% form 'contact', class: 'aweris-form' %}
+          {% if form.errors %}
+            <p class="aweris-form-status">{{ form.errors | default_errors }}</p>
+          {% endif %}
+
+          <div class="aweris-field">
+            <label for="ContactFormPracticeName">Practice name</label>
+            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization">
+          </div>
+          <div class="aweris-field">
+            <label for="ContactFormName">Owner / decision-maker</label>
+            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name">
+          </div>
+          <div class="aweris-field">
+            <label for="ContactFormEmail">Email address</label>
+            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" required>
+          </div>
+          <div class="aweris-field">
+            <label for="ContactFormPhone">Phone number</label>
+            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel">
+          </div>
+          <div class="aweris-field aweris-field-wide">
+            <label for="ContactFormMessage">Message</label>
+            <textarea id="ContactFormMessage" name="contact[body]"></textarea>
+          </div>
+          <button class="aweris-submit" type="submit">Send my details</button>
+        {% endform %}
+      </div>
+    </section>
+  </main>
+
+  <footer class="aweris-footer">
+    <div class="aweris-container">
+      <div class="aweris-footer-grid">
+        <div>
+          <a class="aweris-logo" href="#home" aria-label="Aweris home">Aweris</a>
+          <p class="aweris-footer-copy">Smart automation for mental healthcare practices. <span>Less administration. More time for care.</span></p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <p class="aweris-footer-title">Navigate</p>
+          <div class="aweris-footer-links">
+            <a href="#home">Home</a>
+            <a href="#what-is-aweris">What is Aweris</a>
+            <a href="#features">Features</a>
+            <a href="#security">Security</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+        <div>
+          <p class="aweris-footer-title">Login</p>
+          <div class="aweris-footer-links">
+            <button class="aweris-footer-login" type="button">Bookkeeping App</button>
+            <button class="aweris-footer-login" type="button">Psychologists App</button>
+            <button class="aweris-footer-login" type="button">Client App</button>
+          </div>
+        </div>
+      </div>
+      <div class="aweris-footer-bottom">
+        <span>&copy; {{ 'now' | date: '%Y' }} Aweris.</span>
+        <span>Privacy &amp; security wording confirmed before publication.</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "Aweris homepage",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Aweris homepage"
+    }
+  ]
+}
+{% endschema %}

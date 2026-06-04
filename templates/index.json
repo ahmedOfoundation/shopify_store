@@ -1,11 +1,11 @@
 {
   "sections": {
-    "awares_homepage": {
-      "type": "awares-homepage",
+    "aweris_homepage": {
+      "type": "aweris-homepage",
       "settings": {}
     }
   },
   "order": [
-    "awares_homepage"
+    "aweris_homepage"
   ]
 }
