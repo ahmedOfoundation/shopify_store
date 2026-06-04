@@ -245,7 +245,7 @@
 
   #shopify-section-{{ section.id }} .aweris-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(360px, .74fr);
+    grid-template-columns: minmax(0, 1fr) minmax(440px, .86fr);
     gap: clamp(44px, 7vw, 92px);
     align-items: center;
   }
@@ -260,7 +260,7 @@
 
   #shopify-section-{{ section.id }} .aweris-highlight {
     position: relative;
-    color: var(--aweris-orange);
+    color: var(--aweris-blue);
     white-space: nowrap;
   }
 
@@ -341,43 +341,60 @@
   #shopify-section-{{ section.id }} .aweris-visual {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 22px;
   }
 
   #shopify-section-{{ section.id }} .aweris-tile {
     position: relative;
-    min-height: 150px;
+    min-height: 210px;
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid rgba(59, 64, 88, .18);
     box-shadow: var(--aweris-shadow);
   }
 
+  #shopify-section-{{ section.id }} .aweris-tile::before {
+    content: "";
+    position: absolute;
+    inset: auto 18px 16px auto;
+    width: min(58%, 180px);
+    aspect-ratio: 1;
+    background: var(--aweris-tile-art) center / contain no-repeat;
+    opacity: .92;
+    filter: drop-shadow(0 14px 22px rgba(59, 64, 88, .22));
+  }
+
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(1) {
     background: var(--aweris-orange);
+    --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='32' y='20' width='92' height='126' rx='14' fill='%23fff6e7'/%3E%3Cpath d='M52 55h52M52 78h48M52 101h32' stroke='%233B4058' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='126' cy='118' r='36' fill='%23E9E11E' fill-opacity='.82'/%3E%3Cpath d='M112 116h28M126 102v28' stroke='%23E94E1A' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(2) {
     margin-top: 22px;
     background: var(--aweris-blue);
+    --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='88' cy='78' r='38' fill='%23E9E11E' fill-opacity='.84'/%3E%3Cpath d='M62 78l18 18 42-48' fill='none' stroke='%233B4058' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='44' y='116' width='92' height='22' rx='11' fill='%23fff6e7'/%3E%3Ccircle cx='140' cy='118' r='32' fill='%23fff6e7' fill-opacity='.38'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(3) {
     background: #e89b22;
+    --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='38' y='26' width='104' height='128' rx='16' fill='%23fff6e7'/%3E%3Cpath d='M60 58h60M60 84h60M60 110h60' stroke='%233B4058' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='62' cy='58' r='9' fill='%23E9E11E'/%3E%3Ccircle cx='62' cy='84' r='9' fill='%23E9E11E'/%3E%3Ccircle cx='62' cy='110' r='9' fill='%23E9E11E'/%3E%3Cpath d='M57 58l4 4 9-10M57 84l4 4 9-10M57 110l4 4 9-10' stroke='%23E94E1A' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(4) {
     margin-top: 18px;
     background: #eebc9d;
+    --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M42 52h96a18 18 0 0 1 18 18v28a18 18 0 0 1-18 18H90l-30 26v-26H42a18 18 0 0 1-18-18V70a18 18 0 0 1 18-18Z' fill='%23fff6e7'/%3E%3Ccircle cx='68' cy='84' r='8' fill='%23E94E1A'/%3E%3Ccircle cx='91' cy='84' r='8' fill='%23E9E11E'/%3E%3Ccircle cx='114' cy='84' r='8' fill='%233B4058'/%3E%3Cpath d='M130 38c14 8 22 22 22 38' stroke='%233B4058' stroke-width='8' stroke-linecap='round' fill='none' opacity='.7'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(5) {
     background: var(--aweris-yellow);
+    --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='30' y='34' width='120' height='100' rx='14' fill='%23fff6e7'/%3E%3Cpath d='M50 112V90M78 112V72M106 112V84M134 112V58' stroke='%233B4058' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M50 58h42M50 136h80' stroke='%23E94E1A' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='132' cy='56' r='16' fill='%23E94E1A' fill-opacity='.8'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(6) {
     margin-top: 18px;
     background: #c73918;
+    --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='40' y='22' width='96' height='136' rx='14' fill='%23fff6e7'/%3E%3Cpath d='M62 58h52M62 82h52M62 106h38' stroke='%233B4058' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M60 130c18-16 35-16 52 0' stroke='%23E94E1A' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='124' cy='126' r='32' fill='%23E9E11E' fill-opacity='.76'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-flower,
@@ -389,11 +406,11 @@
   }
 
   #shopify-section-{{ section.id }} .aweris-flower {
-    width: 74px;
-    height: 102px;
-    right: 18px;
-    bottom: -22px;
-    background: rgba(244, 238, 223, .7);
+    width: 102px;
+    height: 130px;
+    right: -18px;
+    bottom: -36px;
+    background: rgba(244, 238, 223, .5);
     transform: rotate(18deg);
   }
 
@@ -1025,7 +1042,7 @@
     }
 
     #shopify-section-{{ section.id }} .aweris-tile {
-      min-height: 132px;
+      min-height: 190px;
     }
 
     #shopify-section-{{ section.id }} .aweris-section {
@@ -1053,9 +1070,9 @@
 <div class="aweris-page" id="home">
   <header class="aweris-header">
     <div class="aweris-container aweris-nav">
-      <a class="aweris-logo" href="#home" aria-label="Aweris home">
-        <img src="{{ 'aweris-logo.png' | asset_url }}" alt="Aweris" width="1100" height="205">
-        <span class="aweris-sr">Aweris</span>
+      <a class="aweris-logo" href="#home" aria-label="Awares home">
+        <img src="{{ 'aweris-logo.png' | asset_url }}" alt="Awares" width="1100" height="205">
+        <span class="aweris-sr">Awares</span>
       </a>
       <button class="aweris-nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="aweris-menu-{{ section.id }}">
         <span></span><span></span><span></span>
@@ -1067,15 +1084,15 @@
           <div class="aweris-login-panel" role="group" aria-label="Login destinations">
             <button class="aweris-login-option aweris-login-app" type="button">
               <span class="aweris-swatch">01</span>
-              <span class="aweris-login-copy"><strong>Bookkeeping App</strong><span>Invoices &amp; Exact workflows</span></span>
+              <span class="aweris-login-copy"><strong>Bookkeeping App</strong></span>
             </button>
             <button class="aweris-login-option aweris-login-app" type="button">
               <span class="aweris-swatch">02</span>
-              <span class="aweris-login-copy"><strong>Psychologists App</strong><span>Reporting &amp; case management</span></span>
+              <span class="aweris-login-copy"><strong>Psychologists App</strong></span>
             </button>
             <button class="aweris-login-option aweris-login-app" type="button">
               <span class="aweris-swatch">03</span>
-              <span class="aweris-login-copy"><strong>Client App</strong><span>Dossier, homework &amp; e-health</span></span>
+              <span class="aweris-login-copy"><strong>Client App</strong></span>
             </button>
           </div>
         </details>
@@ -1088,81 +1105,34 @@
     <section class="aweris-hero" aria-labelledby="aweris-hero-title">
       <div class="aweris-container aweris-hero-grid">
         <div>
-          <p class="aweris-kicker">For GGZ &amp; mental healthcare practices</p>
           <h1 id="aweris-hero-title">Automate the <span class="aweris-highlight">administrative</span> workload of your mental healthcare practice</h1>
-          <p class="aweris-lead">Aweris helps GGZ and psychology practices automate bookkeeping, questionnaires, reporting, email handling, scheduling, dashboards, and client support &mdash; securely within their own environment.</p>
+          <p class="aweris-lead">Awares helps GGZ and psychology practices automate bookkeeping, questionnaires, reporting, email handling, scheduling, dashboards, and client support - securely within their own environment.</p>
           <div class="aweris-actions">
             <a class="aweris-button aweris-button-primary" href="#contact">Contact us</a>
-            <a class="aweris-button" href="#features">See what it does</a>
-          </div>
-          <div class="aweris-trust">
-            <span>Runs inside your own secure infrastructure</span>
-            <span>You stay in control of every report</span>
           </div>
         </div>
 
         <div class="aweris-visual" aria-hidden="true">
-          <div class="aweris-tile"><span class="aweris-product-card">Bookkeeping inside Exact</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Automatic bookkeeping in Exact</span><span class="aweris-flower"></span></div>
           <div class="aweris-tile"><span class="aweris-product-card">Human approval required</span><span class="aweris-flower"></span></div>
-          <div class="aweris-tile"><span class="aweris-product-card">Questionnaires through Zivver</span><span class="aweris-flower"></span></div>
-          <div class="aweris-tile"><span class="aweris-product-card">Secure client support</span><span class="aweris-flower"></span></div>
-          <div class="aweris-tile"><span class="aweris-product-card">Workflow dashboards</span><span class="aweris-flower"></span></div>
-          <div class="aweris-tile"><span class="aweris-product-card">Session reports for review</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Questionnaires and diagnostics</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Client support</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Secretariat dashboards</span><span class="aweris-flower"></span></div>
+          <div class="aweris-tile"><span class="aweris-product-card">Session reporting</span><span class="aweris-flower"></span></div>
         </div>
       </div>
     </section>
 
-    <div class="aweris-strip" aria-hidden="true">
-      <div class="aweris-strip-track">
-        <span class="aweris-strip-item">Bookkeeping</span>
-        <span class="aweris-strip-item">Questionnaires</span>
-        <span class="aweris-strip-item">Reporting</span>
-        <span class="aweris-strip-item">Email handling</span>
-        <span class="aweris-strip-item">Scheduling</span>
-        <span class="aweris-strip-item">Dashboards</span>
-        <span class="aweris-strip-item">Bookkeeping</span>
-        <span class="aweris-strip-item">Questionnaires</span>
-        <span class="aweris-strip-item">Reporting</span>
-        <span class="aweris-strip-item">Email handling</span>
-        <span class="aweris-strip-item">Scheduling</span>
-        <span class="aweris-strip-item">Dashboards</span>
-      </div>
-    </div>
-
     <section class="aweris-section" id="what-is-aweris" aria-labelledby="aweris-about-title">
       <div class="aweris-container aweris-about-grid">
         <div>
-          <p class="aweris-kicker">What is Aweris?</p>
-          <h2 id="aweris-about-title">A smart automation platform built around your practice</h2>
-          <p class="aweris-section-copy">Aweris is a smart automation platform for GGZ and mental healthcare practices. It helps practices reduce repetitive administrative work, improve workflow efficiency, and free up more time for client care.</p>
+          <h2 id="aweris-about-title">What is Awares?</h2>
+          <p class="aweris-section-copy">Awares is a smart automation platform for GGZ and mental healthcare practices. It helps practices reduce repetitive administrative work, improve workflow efficiency, and free up more time for client care.</p>
           <p class="aweris-section-copy">The platform supports electronic patient file workflows, session reporting, accounting, questionnaires, client communication, scheduling, dashboards, and customized workflow automation.</p>
-          <div class="aweris-points">
-            <div class="aweris-point">
-              <span class="aweris-icon">01</span>
-              <div>
-                <strong>Less repetition</strong>
-                <p>Hand the routine, repeatable admin tasks to automation that learns from your practice.</p>
-              </div>
-            </div>
-            <div class="aweris-point">
-              <span class="aweris-icon">02</span>
-              <div>
-                <strong>You stay in control</strong>
-                <p>AI supports the work, but the professional always decides what goes into reports and client communication.</p>
-              </div>
-            </div>
-            <div class="aweris-point">
-              <span class="aweris-icon">03</span>
-              <div>
-                <strong>More time for care</strong>
-                <p>Clinicians and support staff get hours back to spend where it matters: with clients.</p>
-              </div>
-            </div>
-          </div>
         </div>
         <aside class="aweris-principle">
-          <p>&ldquo;AI and automation support the work &mdash; but the <em>healthcare professional</em> always decides what is included in clinical reports and client communication.&rdquo;</p>
-          <span class="aweris-principle-label">The Aweris operating principle</span>
+          <p>AI and automation support the work, but the healthcare professional always decides what is included in clinical reports and client communication.</p>
+          <span class="aweris-principle-label">Human control</span>
           <img class="aweris-bloom" src="{{ 'aweris-bloom-about.png' | asset_url }}" alt="" aria-hidden="true" width="898" height="1100">
         </aside>
       </div>
@@ -1171,15 +1141,15 @@
     <section class="aweris-section aweris-features" id="features" aria-labelledby="aweris-features-title">
       <div class="aweris-container">
         <div class="aweris-centered">
-          <p class="aweris-kicker">Everything in one platform</p>
-          <h2 id="aweris-features-title">Built for the real work of a practice</h2>
-          <p class="aweris-section-copy">Each function is designed to remove a specific piece of administrative load, and new functions are added regularly.</p>
+          <p class="aweris-kicker">Feature grid</p>
+          <h2 id="aweris-features-title">Feature copy blocks</h2>
+          <p class="aweris-section-copy">Use clear cards or blocks. Each feature should be explained in two or three short lines.</p>
         </div>
         <div class="aweris-feature-grid">
           <article class="aweris-card">
             <div class="aweris-card-top"><span class="aweris-icon">01</span><span class="aweris-number">01</span></div>
             <h3>Automatic bookkeeping in Exact</h3>
-            <p>Invoices can be photographed or uploaded and then automatically processed in the practice's Exact environment. The system is self-learning and improves based on previous bookings.</p>
+            <p>Invoices can be photographed or uploaded and then automatically processed in the practice&rsquo;s Exact environment. The system is self-learning and improves based on previous bookings.</p>
           </article>
           <article class="aweris-card">
             <div class="aweris-card-top"><span class="aweris-icon">02</span><span class="aweris-number">02</span></div>
@@ -1233,28 +1203,9 @@
     <section class="aweris-section" id="security" aria-labelledby="aweris-security-title">
       <div class="aweris-container aweris-security-grid">
         <div class="aweris-security-panel">
-          <p class="aweris-kicker">Security &amp; operating model</p>
-          <h2 id="aweris-security-title">Runs within your own secure environment</h2>
-          <p>Aweris is designed to run within the practice's own systems and secure environment. The platform can be operated remotely while keeping the practice's data and workflows inside its own infrastructure.</p>
-          <div class="aweris-checks">
-            <span>The professional decides</span>
-            <span>Human approval required</span>
-            <span>Remote-operated, locally held</span>
-            <span>Data stays on-premise</span>
-          </div>
-          <p>Final privacy, security, and legal wording should be reviewed before publication.</p>
-        </div>
-        <div class="aweris-security-cards">
-          <article class="aweris-security-card">
-            <strong>The professional decides</strong>
-            <p>Nothing reaches a client or a clinical report without a human signing off first.</p>
-            <span class="aweris-toggle">Human approval required</span>
-          </article>
-          <article class="aweris-security-card">
-            <strong>Remote-operated, locally held</strong>
-            <p>We can run and maintain the platform for you, while your infrastructure stays the single source of truth.</p>
-            <span class="aweris-toggle">Data stays on-premise</span>
-          </article>
+          <h2 id="aweris-security-title">Security and operating model</h2>
+          <p>Awares is designed to run within the practice&rsquo;s own systems and secure environment. The platform can be operated remotely while keeping the practice&rsquo;s data and workflows inside its own infrastructure.</p>
+          <p>This is important for mental healthcare practices that work with sensitive client information. Final privacy, security, and legal wording should be checked before publication.</p>
         </div>
       </div>
     </section>
@@ -1262,47 +1213,37 @@
     <section class="aweris-section aweris-contact" id="contact" aria-labelledby="aweris-contact-title">
       <div class="aweris-container aweris-contact-grid">
         <div class="aweris-contact-intro">
-          <p class="aweris-kicker">Get in touch</p>
-          <h2 id="aweris-contact-title">Interested in automating your practice's admin?</h2>
-          <p class="aweris-contact-text">Leave your details and we'll contact you to talk through how Aweris fits your practice. No obligation.</p>
-          <div class="aweris-contact-details">
-            <a href="mailto:hello@aweris.nl"><span class="aweris-contact-icon">@</span>hello@aweris.nl</a>
-            <span><span class="aweris-contact-icon">+</span>+31 (0)30 000 0000</span>
-            <span><span class="aweris-contact-icon">NL</span>Utrecht, Netherlands</span>
-          </div>
+          <h2 id="aweris-contact-title">Interested in automating the administrative work of your mental healthcare practice?</h2>
+          <p class="aweris-contact-text">Leave your details and we will contact you.</p>
           <img class="aweris-contact-bloom" src="{{ 'aweris-bloom-contact.png' | asset_url }}" alt="" aria-hidden="true" width="1100" height="1084">
         </div>
 
         {% form 'contact', class: 'aweris-form' %}
-          {% if form.posted_successfully? %}
-            <p class="aweris-form-status">Thank you. We'll be in touch.</p>
-          {% endif %}
           {% if form.errors %}
             <p class="aweris-form-status">{{ form.errors | default_errors }}</p>
           {% endif %}
 
           <div class="aweris-field">
             <label for="ContactFormPracticeName">Practice name</label>
-            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization" placeholder="e.g. Praktijk de Linde">
+            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization">
           </div>
           <div class="aweris-field">
-            <label for="ContactFormName">Owner / decision-maker</label>
-            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name" placeholder="Full name">
+            <label for="ContactFormName">Name of owner, director, or decision-maker</label>
+            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name">
           </div>
           <div class="aweris-field">
             <label for="ContactFormEmail">Email address</label>
-            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" placeholder="name@practice.nl" required>
+            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" required>
           </div>
           <div class="aweris-field">
             <label for="ContactFormPhone">Phone number</label>
-            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel" placeholder="+31 6 ...">
+            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel">
           </div>
           <div class="aweris-field aweris-field-wide">
             <label for="ContactFormMessage">Message</label>
-            <textarea id="ContactFormMessage" name="contact[body]" placeholder="Tell us a little about your practice and what you'd like to automate."></textarea>
+            <textarea id="ContactFormMessage" name="contact[body]"></textarea>
           </div>
-          <button class="aweris-submit" type="submit">Send my details</button>
-          <p class="aweris-form-foot">We'll only use your details to get in touch about Aweris.</p>
+          <button class="aweris-submit" type="submit">Submit button</button>
         {% endform %}
       </div>
     </section>
@@ -1312,34 +1253,18 @@
     <div class="aweris-container">
       <div class="aweris-footer-grid">
         <div>
-          <a class="aweris-logo" href="#home" aria-label="Aweris home">
-            <img src="{{ 'aweris-logo.png' | asset_url }}" alt="Aweris" width="1100" height="205">
-            <span class="aweris-sr">Aweris</span>
+          <a class="aweris-logo" href="#home" aria-label="Awares home">
+            <img src="{{ 'aweris-logo.png' | asset_url }}" alt="Awares" width="1100" height="205">
+            <span class="aweris-sr">Awares</span>
           </a>
           <p class="aweris-footer-copy">Smart automation for mental healthcare practices. <span>Less administration. More time for care.</span></p>
         </div>
-        <nav aria-label="Footer navigation">
-          <p class="aweris-footer-title">Navigate</p>
-          <div class="aweris-footer-links">
-            <a href="#home">Home</a>
-            <a href="#what-is-aweris">What is Aweris</a>
-            <a href="#features">Features</a>
-            <a href="#security">Security</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </nav>
         <div>
-          <p class="aweris-footer-title">Login</p>
           <div class="aweris-footer-links">
-            <button class="aweris-footer-login" type="button">Bookkeeping App</button>
-            <button class="aweris-footer-login" type="button">Psychologists App</button>
-            <button class="aweris-footer-login" type="button">Client App</button>
+            <a href="#contact">Contact</a>
+            <a href="#home">Login</a>
           </div>
         </div>
-      </div>
-      <div class="aweris-footer-bottom">
-        <span>&copy; {{ 'now' | date: '%Y' }} Aweris.</span>
-        <span>Privacy &amp; security wording confirmed before publication.</span>
       </div>
     </div>
   </footer>
@@ -1377,11 +1302,11 @@
 
 {% schema %}
 {
-  "name": "Aweris homepage",
+  "name": "Awares homepage",
   "settings": [],
   "presets": [
     {
-      "name": "Aweris homepage"
+      "name": "Awares homepage"
     }
   ]
 }
