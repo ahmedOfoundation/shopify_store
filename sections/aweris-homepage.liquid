@@ -342,11 +342,15 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
+    width: 100%;
+    max-width: 454px;
+    margin-left: auto;
   }
 
   #shopify-section-{{ section.id }} .aweris-tile {
     position: relative;
-    min-height: 210px;
+    aspect-ratio: 1;
+    min-height: 0;
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid rgba(59, 64, 88, .18);
@@ -356,8 +360,8 @@
   #shopify-section-{{ section.id }} .aweris-tile::before {
     content: "";
     position: absolute;
-    inset: auto 18px 16px auto;
-    width: min(58%, 180px);
+    inset: auto var(--aweris-art-right, 36px) var(--aweris-art-bottom, 22px) auto;
+    width: var(--aweris-art-width, 112px);
     aspect-ratio: 1;
     background: var(--aweris-tile-art) center / contain no-repeat;
     opacity: .92;
@@ -366,34 +370,52 @@
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(1) {
     background: var(--aweris-orange);
+    --aweris-art-width: 100px;
+    --aweris-art-right: 38px;
+    --aweris-art-bottom: 4px;
     --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='32' y='20' width='92' height='126' rx='14' fill='%23fff6e7'/%3E%3Cpath d='M52 55h52M52 78h48M52 101h32' stroke='%233B4058' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='126' cy='118' r='36' fill='%23E9E11E' fill-opacity='.82'/%3E%3Cpath d='M112 116h28M126 102v28' stroke='%23E94E1A' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(2) {
     margin-top: 22px;
     background: var(--aweris-blue);
+    --aweris-art-width: 128px;
+    --aweris-art-right: 36px;
+    --aweris-art-bottom: 34px;
     --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='88' cy='78' r='38' fill='%23E9E11E' fill-opacity='.84'/%3E%3Cpath d='M62 78l18 18 42-48' fill='none' stroke='%233B4058' stroke-width='12' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='44' y='116' width='92' height='22' rx='11' fill='%23fff6e7'/%3E%3Ccircle cx='140' cy='118' r='32' fill='%23fff6e7' fill-opacity='.38'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(3) {
     background: #e89b22;
+    --aweris-art-width: 106px;
+    --aweris-art-right: 42px;
+    --aweris-art-bottom: 18px;
     --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='38' y='26' width='104' height='128' rx='16' fill='%23fff6e7'/%3E%3Cpath d='M60 58h60M60 84h60M60 110h60' stroke='%233B4058' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='62' cy='58' r='9' fill='%23E9E11E'/%3E%3Ccircle cx='62' cy='84' r='9' fill='%23E9E11E'/%3E%3Ccircle cx='62' cy='110' r='9' fill='%23E9E11E'/%3E%3Cpath d='M57 58l4 4 9-10M57 84l4 4 9-10M57 110l4 4 9-10' stroke='%23E94E1A' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(4) {
     margin-top: 18px;
     background: #eebc9d;
+    --aweris-art-width: 132px;
+    --aweris-art-right: 28px;
+    --aweris-art-bottom: 34px;
     --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M42 52h96a18 18 0 0 1 18 18v28a18 18 0 0 1-18 18H90l-30 26v-26H42a18 18 0 0 1-18-18V70a18 18 0 0 1 18-18Z' fill='%23fff6e7'/%3E%3Ccircle cx='68' cy='84' r='8' fill='%23E94E1A'/%3E%3Ccircle cx='91' cy='84' r='8' fill='%23E9E11E'/%3E%3Ccircle cx='114' cy='84' r='8' fill='%233B4058'/%3E%3Cpath d='M130 38c14 8 22 22 22 38' stroke='%233B4058' stroke-width='8' stroke-linecap='round' fill='none' opacity='.7'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(5) {
     background: var(--aweris-yellow);
+    --aweris-art-width: 112px;
+    --aweris-art-right: 42px;
+    --aweris-art-bottom: 30px;
     --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='30' y='34' width='120' height='100' rx='14' fill='%23fff6e7'/%3E%3Cpath d='M50 112V90M78 112V72M106 112V84M134 112V58' stroke='%233B4058' stroke-width='10' stroke-linecap='round'/%3E%3Cpath d='M50 58h42M50 136h80' stroke='%23E94E1A' stroke-width='7' stroke-linecap='round'/%3E%3Ccircle cx='132' cy='56' r='16' fill='%23E94E1A' fill-opacity='.8'/%3E%3C/svg%3E");
   }
 
   #shopify-section-{{ section.id }} .aweris-tile:nth-child(6) {
     margin-top: 18px;
     background: #c73918;
+    --aweris-art-width: 112px;
+    --aweris-art-right: 40px;
+    --aweris-art-bottom: 28px;
     --aweris-tile-art: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='40' y='22' width='96' height='136' rx='14' fill='%23fff6e7'/%3E%3Cpath d='M62 58h52M62 82h52M62 106h38' stroke='%233B4058' stroke-width='7' stroke-linecap='round'/%3E%3Cpath d='M60 130c18-16 35-16 52 0' stroke='%23E94E1A' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='124' cy='126' r='32' fill='%23E9E11E' fill-opacity='.76'/%3E%3C/svg%3E");
   }
 
@@ -432,15 +454,20 @@
 
   #shopify-section-{{ section.id }} .aweris-product-card {
     position: absolute;
-    left: 18px;
-    top: 18px;
-    right: 18px;
-    padding: 14px;
+    left: 16px;
+    top: 16px;
+    right: 16px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 13px 14px;
     border-radius: 12px;
     background: rgba(255, 253, 248, .86);
     color: var(--aweris-blue);
     font-size: 13px;
     font-weight: 800;
+    line-height: 1.35;
+    z-index: 3;
   }
 
   #shopify-section-{{ section.id }} .aweris-strip {
