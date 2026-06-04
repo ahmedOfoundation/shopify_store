@@ -1,0 +1,607 @@
+<style>
+  #shopify-section-{{ section.id }} {
+    --awares-orange: #E94E1A;
+    --awares-yellow: #E9E11E;
+    --awares-blue: #3B4058;
+    --awares-cream: #F4EEDF;
+    --awares-text: #222222;
+    --awares-muted: #5F6270;
+    --awares-white: #ffffff;
+    color: var(--awares-text);
+    background: var(--awares-cream);
+    font-family: var(--font-body--family);
+  }
+
+  #shopify-section-{{ section.id }} .awares-page {
+    background:
+      radial-gradient(circle at 8% 14%, rgba(233, 225, 30, .28), transparent 24%),
+      radial-gradient(circle at 92% 8%, rgba(233, 78, 26, .16), transparent 24%),
+      var(--awares-cream);
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .awares-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  #shopify-section-{{ section.id }} .awares-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(244, 238, 223, .92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(59, 64, 88, .12);
+  }
+
+  #shopify-section-{{ section.id }} .awares-nav {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-logo {
+    color: var(--awares-blue);
+    font-family: var(--font-heading--family);
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .awares-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-menu a,
+  #shopify-section-{{ section.id }} .awares-login-summary,
+  #shopify-section-{{ section.id }} .awares-login-option {
+    color: var(--awares-blue);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .awares-menu a,
+  #shopify-section-{{ section.id }} .awares-login-summary {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 10px 14px;
+    border-radius: 999px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-menu a:hover,
+  #shopify-section-{{ section.id }} .awares-login-summary:hover {
+    background: rgba(233, 78, 26, .1);
+  }
+
+  #shopify-section-{{ section.id }} .awares-login {
+    position: relative;
+  }
+
+  #shopify-section-{{ section.id }} .awares-login-summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .awares-login-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #shopify-section-{{ section.id }} .awares-login-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    display: grid;
+    gap: 8px;
+    min-width: 220px;
+    padding: 10px;
+    background: var(--awares-white);
+    border: 1px solid rgba(59, 64, 88, .14);
+    border-radius: 8px;
+    box-shadow: 0 18px 44px rgba(59, 64, 88, .16);
+  }
+
+  #shopify-section-{{ section.id }} .awares-login-option {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 6px;
+    background: rgba(244, 238, 223, .78);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .awares-login-option:hover {
+    background: rgba(233, 78, 26, .12);
+  }
+
+  #shopify-section-{{ section.id }} .awares-hero {
+    position: relative;
+    min-height: 74vh;
+    display: flex;
+    align-items: center;
+    padding: 96px 0 84px;
+    background:
+      radial-gradient(circle at 14% 18%, rgba(233, 225, 30, .38), transparent 26%),
+      radial-gradient(circle at 82% 18%, rgba(255, 255, 255, .28), transparent 24%),
+      linear-gradient(135deg, var(--awares-orange), #f47a3d);
+  }
+
+  #shopify-section-{{ section.id }} .awares-hero::after,
+  #shopify-section-{{ section.id }} .awares-secure::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 2px solid rgba(255, 255, 255, .34);
+    border-radius: 62% 38% 56% 44%;
+    transform: rotate(18deg);
+    pointer-events: none;
+  }
+
+  #shopify-section-{{ section.id }} .awares-hero::after {
+    right: 7vw;
+    bottom: 56px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-hero-copy {
+    max-width: 860px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-kicker {
+    margin: 0 0 18px;
+    color: var(--awares-yellow);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  #shopify-section-{{ section.id }} h1,
+  #shopify-section-{{ section.id }} h2,
+  #shopify-section-{{ section.id }} h3,
+  #shopify-section-{{ section.id }} p {
+    margin: 0;
+  }
+
+  #shopify-section-{{ section.id }} h1 {
+    max-width: 900px;
+    color: var(--awares-white);
+    font-family: var(--font-heading--family);
+    font-size: clamp(42px, 7vw, 78px);
+    line-height: 1.04;
+  }
+
+  #shopify-section-{{ section.id }} .awares-hero p {
+    max-width: 760px;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, .92);
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.6;
+  }
+
+  #shopify-section-{{ section.id }} .awares-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    margin-top: 34px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: var(--awares-blue);
+    color: var(--awares-white);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .awares-section {
+    padding: 74px 0;
+  }
+
+  #shopify-section-{{ section.id }} .awares-section-header {
+    max-width: 820px;
+    margin-bottom: 32px;
+  }
+
+  #shopify-section-{{ section.id }} h2 {
+    color: var(--awares-blue);
+    font-family: var(--font-heading--family);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.12;
+  }
+
+  #shopify-section-{{ section.id }} .awares-section-header p,
+  #shopify-section-{{ section.id }} .awares-copy p {
+    margin-top: 18px;
+    color: var(--awares-muted);
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  #shopify-section-{{ section.id }} .awares-tagline {
+    margin-top: 28px;
+    padding: 22px 26px;
+    border-left: 5px solid var(--awares-orange);
+    background: rgba(255, 255, 255, .74);
+    border-radius: 8px;
+    color: var(--awares-blue);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  #shopify-section-{{ section.id }} .awares-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-card {
+    min-height: 178px;
+    padding: 24px;
+    background: rgba(255, 255, 255, .86);
+    border: 1px solid rgba(59, 64, 88, .12);
+    border-radius: 8px;
+    box-shadow: 0 14px 34px rgba(59, 64, 88, .07);
+  }
+
+  #shopify-section-{{ section.id }} .awares-card h3 {
+    color: var(--awares-blue);
+    font-size: 22px;
+    line-height: 1.22;
+  }
+
+  #shopify-section-{{ section.id }} .awares-card p {
+    margin-top: 12px;
+    color: var(--awares-muted);
+    font-size: 16px;
+    line-height: 1.62;
+  }
+
+  #shopify-section-{{ section.id }} .awares-secure {
+    position: relative;
+    background: var(--awares-blue);
+    color: var(--awares-white);
+  }
+
+  #shopify-section-{{ section.id }} .awares-secure h2,
+  #shopify-section-{{ section.id }} .awares-secure p {
+    color: var(--awares-white);
+  }
+
+  #shopify-section-{{ section.id }} .awares-secure p {
+    max-width: 850px;
+    color: rgba(255, 255, 255, .86);
+  }
+
+  #shopify-section-{{ section.id }} .awares-secure::after {
+    right: 8vw;
+    top: 54px;
+    border-color: rgba(233, 225, 30, .42);
+  }
+
+  #shopify-section-{{ section.id }} .awares-contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+    gap: 34px;
+    align-items: start;
+  }
+
+  #shopify-section-{{ section.id }} .awares-form {
+    display: grid;
+    gap: 14px;
+    padding: 28px;
+    background: var(--awares-white);
+    border: 1px solid rgba(59, 64, 88, .12);
+    border-radius: 8px;
+    box-shadow: 0 18px 44px rgba(59, 64, 88, .09);
+  }
+
+  #shopify-section-{{ section.id }} .awares-field {
+    display: grid;
+    gap: 7px;
+  }
+
+  #shopify-section-{{ section.id }} label {
+    color: var(--awares-blue);
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} input,
+  #shopify-section-{{ section.id }} textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid rgba(59, 64, 88, .22);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--awares-text);
+    font: inherit;
+  }
+
+  #shopify-section-{{ section.id }} textarea {
+    min-height: 132px;
+    resize: vertical;
+  }
+
+  #shopify-section-{{ section.id }} .awares-submit {
+    min-height: 50px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--awares-orange);
+    color: var(--awares-white);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .awares-form-status {
+    color: var(--awares-blue);
+    font-weight: 700;
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer {
+    padding: 34px 0;
+    background: var(--awares-blue);
+    color: var(--awares-white);
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer-brand {
+    display: grid;
+    gap: 6px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer-name {
+    color: var(--awares-white);
+    font-family: var(--font-heading--family);
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer-tagline {
+    color: rgba(255, 255, 255, .78);
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .awares-footer a,
+  #shopify-section-{{ section.id }} .awares-footer summary {
+    color: var(--awares-white);
+  }
+
+  @media screen and (max-width: 850px) {
+    #shopify-section-{{ section.id }} .awares-nav,
+    #shopify-section-{{ section.id }} .awares-footer-inner {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .awares-menu {
+      width: 100%;
+      justify-content: space-between;
+      gap: 4px;
+    }
+
+    #shopify-section-{{ section.id }} .awares-login-panel {
+      left: 0;
+      right: auto;
+    }
+
+    #shopify-section-{{ section.id }} .awares-grid,
+    #shopify-section-{{ section.id }} .awares-contact-layout {
+      grid-template-columns: 1fr;
+    }
+
+    #shopify-section-{{ section.id }} .awares-hero {
+      min-height: auto;
+      padding: 78px 0 68px;
+    }
+  }
+
+  @media screen and (max-width: 560px) {
+    #shopify-section-{{ section.id }} .awares-container {
+      width: min(100% - 28px, 1180px);
+    }
+
+    #shopify-section-{{ section.id }} .awares-menu a,
+    #shopify-section-{{ section.id }} .awares-login-summary {
+      padding: 9px 10px;
+      font-size: 14px;
+    }
+
+    #shopify-section-{{ section.id }} .awares-section {
+      padding: 58px 0;
+    }
+
+    #shopify-section-{{ section.id }} .awares-form {
+      padding: 20px;
+    }
+  }
+</style>
+
+<div class="awares-page" id="home">
+  <header class="awares-header">
+    <div class="awares-container awares-nav">
+      <a class="awares-logo" href="#home" aria-label="Awares home">Awares</a>
+      <nav class="awares-menu" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <details class="awares-login">
+          <summary class="awares-login-summary">Login</summary>
+          <div class="awares-login-panel" role="group" aria-label="Login destinations">
+            <button class="awares-login-option" type="button">Bookkeeping App</button>
+            <button class="awares-login-option" type="button">Psychologists App</button>
+            <button class="awares-login-option" type="button">Client App</button>
+          </div>
+        </details>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="awares-hero" aria-labelledby="awares-hero-title">
+      <div class="awares-container awares-hero-copy">
+        <p class="awares-kicker">Smart automation for mental healthcare practices</p>
+        <h1 id="awares-hero-title">Automate the administrative workload of your mental healthcare practice</h1>
+        <p>Awares helps GGZ and psychology practices automate bookkeeping, questionnaires, reporting, email handling, scheduling, dashboards, and client support - securely within their own environment.</p>
+        <a class="awares-button" href="#contact">Contact us</a>
+      </div>
+    </section>
+
+    <section class="awares-section" aria-labelledby="awares-about-title">
+      <div class="awares-container awares-copy">
+        <div class="awares-section-header">
+          <h2 id="awares-about-title">What is Awares?</h2>
+          <p>Awares is a smart automation platform for GGZ and mental healthcare practices. It helps practices reduce repetitive administrative work, improve workflow efficiency, and free up more time for client care.</p>
+          <p>The platform supports electronic patient file workflows, session reporting, accounting, questionnaires, client communication, scheduling, dashboards, and customized workflow automation.</p>
+        </div>
+        <div class="awares-tagline">Less administration. More time for care.</div>
+      </div>
+    </section>
+
+    <section class="awares-section" aria-labelledby="awares-features-title">
+      <div class="awares-container">
+        <div class="awares-section-header">
+          <h2 id="awares-features-title">Feature grid</h2>
+        </div>
+        <div class="awares-grid">
+          <article class="awares-card">
+            <h3>Automatic bookkeeping in Exact</h3>
+            <p>Invoices can be photographed or uploaded and then automatically processed in the practice's Exact environment. The system is self-learning and improves based on previous bookings.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Questionnaires and diagnostics</h3>
+            <p>Send CQI, ROM, diagnostic, and practice-specific questionnaires automatically and securely through Zivver.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Automated email support</h3>
+            <p>Automate a large share of incoming emails, including general questions, non-treatment-related care questions, and many internal staff questions.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Calling and scheduling automation</h3>
+            <p>Support calls, appointment planning, reminders, and follow-ups. Clients can be contacted at suitable times, including outside office hours when useful.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Session reporting</h3>
+            <p>Support reports for intakes, anamnesis, ADHD assessments, autism assessments, general mental healthcare, specialist mental healthcare, and regular sessions.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Client app and dossier access</h3>
+            <p>Clients can access their dossier and relevant information through the client area of the app.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Personalized homework and e-health</h3>
+            <p>Generate tailored homework and e-health content based on therapy sessions and session reports, then send it to the client.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Lifestyle support</h3>
+            <p>Support clients with exercise and movement. Future functions can also support sleep improvement and nutrition improvement.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Secretariat dashboards</h3>
+            <p>Create dashboards for the secretariat to monitor automated workflows and check whether tasks are running correctly.</p>
+          </article>
+          <article class="awares-card">
+            <h3>Custom automation</h3>
+            <p>Add custom workflows when needed. The current platform already includes several functions, and new functions are added regularly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="awares-section awares-secure" aria-labelledby="awares-secure-title">
+      <div class="awares-container awares-copy">
+        <h2 id="awares-secure-title">Security and operating model</h2>
+        <p>Awares is designed to run within the practice's own systems and secure environment. The platform can be operated remotely while keeping the practice's data and workflows inside its own infrastructure.</p>
+        <p>This is important for mental healthcare practices that work with sensitive client information. Final privacy, security, and legal wording should be checked before publication.</p>
+      </div>
+    </section>
+
+    <section class="awares-section" id="contact" aria-labelledby="awares-contact-title">
+      <div class="awares-container awares-contact-layout">
+        <div class="awares-section-header">
+          <h2 id="awares-contact-title">Contact</h2>
+          <p>Interested in automating the administrative work of your mental healthcare practice? Leave your details and we will contact you.</p>
+        </div>
+
+        {% form 'contact', class: 'awares-form' %}
+          {% if form.errors %}
+            <p class="awares-form-status">{{ form.errors | default_errors }}</p>
+          {% endif %}
+
+          <div class="awares-field">
+            <label for="ContactFormPracticeName">Practice name</label>
+            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization">
+          </div>
+          <div class="awares-field">
+            <label for="ContactFormName">Name of owner, director, or decision-maker</label>
+            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name">
+          </div>
+          <div class="awares-field">
+            <label for="ContactFormEmail">Email address</label>
+            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" required>
+          </div>
+          <div class="awares-field">
+            <label for="ContactFormPhone">Phone number</label>
+            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel">
+          </div>
+          <div class="awares-field">
+            <label for="ContactFormMessage">Message</label>
+            <textarea id="ContactFormMessage" name="contact[body]"></textarea>
+          </div>
+          <button class="awares-submit" type="submit">Submit</button>
+        {% endform %}
+      </div>
+    </section>
+  </main>
+
+  <footer class="awares-footer">
+    <div class="awares-container awares-footer-inner">
+      <div class="awares-footer-brand">
+        <span class="awares-footer-name">Awares</span>
+        <span class="awares-footer-tagline">Awares helps mental healthcare practices automate administrative work, reduce workload, and create more time for client care.</span>
+      </div>
+      <div class="awares-footer-links">
+        <a href="#contact">Contact</a>
+        <details class="awares-login">
+          <summary class="awares-login-summary">Login</summary>
+          <div class="awares-login-panel" role="group" aria-label="Footer login destinations">
+            <button class="awares-login-option" type="button">Bookkeeping App</button>
+            <button class="awares-login-option" type="button">Psychologists App</button>
+            <button class="awares-login-option" type="button">Client App</button>
+          </div>
+        </details>
+      </div>
+    </div>
+  </footer>
+</div>
+
+{% schema %}
+{
+  "name": "Awares homepage",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Awares homepage"
+    }
+  ]
+}
+{% endschema %}
