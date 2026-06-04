@@ -7,13 +7,13 @@
     --aweris-orange: #E94E1A;
     --aweris-yellow: #E9E11E;
     --aweris-blue: #3B4058;
-    --aweris-cream: #F4EEDF;
-    --aweris-cream-light: #fbf5ea;
-    --aweris-card: #fffdf8;
+    --aweris-cream: #F4E1B9;
+    --aweris-cream-light: #FBEED4;
+    --aweris-card: #FFFAEE;
     --aweris-text: #3B4058;
-    --aweris-muted: #667086;
-    --aweris-line: rgba(59, 64, 88, .18);
-    --aweris-shadow: 0 22px 54px rgba(59, 64, 88, .12);
+    --aweris-muted: #5E6376;
+    --aweris-line: #ECD9B4;
+    --aweris-shadow: 0 24px 60px rgba(59, 64, 88, .16);
     color: var(--aweris-text);
     background: var(--aweris-cream-light);
     font-family: var(--font-body--family);
@@ -30,7 +30,7 @@
   }
 
   #shopify-section-{{ section.id }} .aweris-container {
-    width: min(1140px, calc(100% - 40px));
+    width: min(1180px, calc(100% - 40px));
     margin: 0 auto;
   }
 
@@ -1111,15 +1111,15 @@
           <div class="aweris-login-panel" role="group" aria-label="Login destinations">
             <button class="aweris-login-option aweris-login-app" type="button">
               <span class="aweris-swatch">01</span>
-              <span class="aweris-login-copy"><strong>Bookkeeping App</strong></span>
+              <span class="aweris-login-copy"><strong>Bookkeeping App</strong><span>Invoices &amp; Exact workflows</span></span>
             </button>
             <button class="aweris-login-option aweris-login-app" type="button">
               <span class="aweris-swatch">02</span>
-              <span class="aweris-login-copy"><strong>Psychologists App</strong></span>
+              <span class="aweris-login-copy"><strong>Psychologists App</strong><span>Reporting &amp; case management</span></span>
             </button>
             <button class="aweris-login-option aweris-login-app" type="button">
               <span class="aweris-swatch">03</span>
-              <span class="aweris-login-copy"><strong>Client App</strong></span>
+              <span class="aweris-login-copy"><strong>Client App</strong><span>Dossier, homework &amp; e-health</span></span>
             </button>
           </div>
         </details>
@@ -1132,10 +1132,16 @@
     <section class="aweris-hero" aria-labelledby="aweris-hero-title">
       <div class="aweris-container aweris-hero-grid">
         <div>
+          <p class="aweris-kicker">For GGZ &amp; mental healthcare practices</p>
           <h1 id="aweris-hero-title">Automate the <span class="aweris-highlight">administrative</span> workload of your mental healthcare practice</h1>
-          <p class="aweris-lead">Aweris helps GGZ and psychology practices automate bookkeeping, questionnaires, reporting, email handling, scheduling, dashboards, and client support - securely within their own environment.</p>
+          <p class="aweris-lead">Aweris automates bookkeeping, questionnaires, reporting, email handling, scheduling, dashboards and client support &mdash; securely within your practice&rsquo;s own environment.</p>
           <div class="aweris-actions">
-            <a class="aweris-button aweris-button-primary" href="#contact">Contact us</a>
+            <a class="aweris-button aweris-button-primary" href="#contact">Contact us <span aria-hidden="true">&rarr;</span></a>
+            <a class="aweris-button" href="#features">See what it does</a>
+          </div>
+          <div class="aweris-trust">
+            <span>Runs inside your own secure infrastructure</span>
+            <span>You stay in control of every report</span>
           </div>
         </div>
 
@@ -1150,16 +1156,56 @@
       </div>
     </section>
 
+    <div class="aweris-strip" aria-hidden="true">
+      <div class="aweris-strip-track">
+        <span class="aweris-strip-item">Bookkeeping</span>
+        <span class="aweris-strip-item">Questionnaires</span>
+        <span class="aweris-strip-item">Reporting</span>
+        <span class="aweris-strip-item">Email handling</span>
+        <span class="aweris-strip-item">Scheduling</span>
+        <span class="aweris-strip-item">Dashboards</span>
+        <span class="aweris-strip-item">Bookkeeping</span>
+        <span class="aweris-strip-item">Questionnaires</span>
+        <span class="aweris-strip-item">Reporting</span>
+        <span class="aweris-strip-item">Email handling</span>
+        <span class="aweris-strip-item">Scheduling</span>
+        <span class="aweris-strip-item">Dashboards</span>
+      </div>
+    </div>
+
     <section class="aweris-section" id="what-is-aweris" aria-labelledby="aweris-about-title">
       <div class="aweris-container aweris-about-grid">
         <div>
-          <h2 id="aweris-about-title">What is Aweris?</h2>
-          <p class="aweris-section-copy">Aweris is a smart automation platform for GGZ and mental healthcare practices. It helps practices reduce repetitive administrative work, improve workflow efficiency, and free up more time for client care.</p>
-          <p class="aweris-section-copy">The platform supports electronic patient file workflows, session reporting, accounting, questionnaires, client communication, scheduling, dashboards, and customized workflow automation.</p>
+          <p class="aweris-kicker">What is Aweris?</p>
+          <h2 id="aweris-about-title">A smart automation platform built around your practice</h2>
+          <p class="aweris-section-copy">Aweris reduces repetitive administrative work, improves workflow efficiency, and frees up more time for client care &mdash; supporting electronic patient file workflows, session reporting, accounting, questionnaires, communication, scheduling, dashboards and custom automation.</p>
+          <div class="aweris-points">
+            <div class="aweris-point">
+              <span class="aweris-icon">01</span>
+              <div>
+                <strong>Less repetition</strong>
+                <p>Hand the routine, repeatable admin tasks to automation that learns from your practice.</p>
+              </div>
+            </div>
+            <div class="aweris-point">
+              <span class="aweris-icon">02</span>
+              <div>
+                <strong>You stay in control</strong>
+                <p>AI supports the work, but the professional always decides what goes into reports and client communication.</p>
+              </div>
+            </div>
+            <div class="aweris-point">
+              <span class="aweris-icon">03</span>
+              <div>
+                <strong>More time for care</strong>
+                <p>Clinicians and support staff get hours back to spend where it matters &mdash; with clients.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <aside class="aweris-principle">
-          <p>AI and automation support the work, but the healthcare professional always decides what is included in clinical reports and client communication.</p>
-          <span class="aweris-principle-label">Human control</span>
+          <p>&ldquo;AI and automation support the work &mdash; but the <em>healthcare professional</em> always decides what is included in clinical reports and client communication.&rdquo;</p>
+          <span class="aweris-principle-label">The Aweris operating principle</span>
           <img class="aweris-bloom" src="{{ 'aweris-bloom-about.png' | asset_url }}" alt="" aria-hidden="true" width="898" height="1100">
         </aside>
       </div>
@@ -1168,9 +1214,9 @@
     <section class="aweris-section aweris-features" id="features" aria-labelledby="aweris-features-title">
       <div class="aweris-container">
         <div class="aweris-centered">
-          <p class="aweris-kicker">Feature grid</p>
-          <h2 id="aweris-features-title">Feature copy blocks</h2>
-          <p class="aweris-section-copy">Use clear cards or blocks. Each feature should be explained in two or three short lines.</p>
+          <p class="aweris-kicker">Everything in one platform</p>
+          <h2 id="aweris-features-title">Built for the real work of a practice</h2>
+          <p class="aweris-section-copy">Each function is designed to remove a specific piece of administrative load &mdash; and new functions are added regularly.</p>
         </div>
         <div class="aweris-feature-grid">
           <article class="aweris-card">
@@ -1230,9 +1276,27 @@
     <section class="aweris-section" id="security" aria-labelledby="aweris-security-title">
       <div class="aweris-container aweris-security-grid">
         <div class="aweris-security-panel">
-          <h2 id="aweris-security-title">Security and operating model</h2>
-          <p>Aweris is designed to run within the practice&rsquo;s own systems and secure environment. The platform can be operated remotely while keeping the practice&rsquo;s data and workflows inside its own infrastructure.</p>
-          <p>This is important for mental healthcare practices that work with sensitive client information. Final privacy, security, and legal wording should be checked before publication.</p>
+          <p class="aweris-kicker">Security &amp; operating model</p>
+          <h2 id="aweris-security-title">Your data never leaves your house</h2>
+          <p>Aweris is designed to run within your practice&rsquo;s own systems and secure environment. The platform can be operated remotely while keeping your data and workflows inside your own infrastructure.</p>
+          <div class="aweris-checks">
+            <span>Runs inside your own secure environment</span>
+            <span>Built for sensitive client information</span>
+            <span>Questionnaires sent securely through Zivver</span>
+          </div>
+          <p>Final privacy, security and legal wording is reviewed with your practice before launch.</p>
+        </div>
+        <div class="aweris-security-cards">
+          <article class="aweris-security-card">
+            <strong>The professional decides</strong>
+            <p>Nothing reaches a client or a clinical report without a human signing off first.</p>
+            <span class="aweris-toggle">Human approval required</span>
+          </article>
+          <article class="aweris-security-card">
+            <strong>Remote-operated, locally held</strong>
+            <p>We can run and maintain the platform for you, while your infrastructure stays the single source of truth.</p>
+            <span class="aweris-toggle">Data stays on-premise</span>
+          </article>
         </div>
       </div>
     </section>
@@ -1240,37 +1304,47 @@
     <section class="aweris-section aweris-contact" id="contact" aria-labelledby="aweris-contact-title">
       <div class="aweris-container aweris-contact-grid">
         <div class="aweris-contact-intro">
-          <h2 id="aweris-contact-title">Interested in automating the administrative work of your mental healthcare practice?</h2>
-          <p class="aweris-contact-text">Leave your details and we will contact you.</p>
+          <p class="aweris-kicker">Get in touch</p>
+          <h2 id="aweris-contact-title">Interested in automating your practice&rsquo;s admin?</h2>
+          <p class="aweris-contact-text">Leave your details and we&rsquo;ll contact you to talk through how Aweris fits your practice. No obligation.</p>
+          <div class="aweris-contact-details">
+            <a href="mailto:hello@aweris.nl"><span class="aweris-contact-icon">@</span>hello@aweris.nl</a>
+            <span><span class="aweris-contact-icon">+</span>+31 (0)30 000 0000</span>
+            <span><span class="aweris-contact-icon">NL</span>Utrecht, Netherlands</span>
+          </div>
           <img class="aweris-contact-bloom" src="{{ 'aweris-bloom-contact.png' | asset_url }}" alt="" aria-hidden="true" width="1100" height="1084">
         </div>
 
         {% form 'contact', class: 'aweris-form' %}
+          {% if form.posted_successfully? %}
+            <p class="aweris-form-status">Thank you. We&rsquo;ll be in touch.</p>
+          {% endif %}
           {% if form.errors %}
             <p class="aweris-form-status">{{ form.errors | default_errors }}</p>
           {% endif %}
 
           <div class="aweris-field">
             <label for="ContactFormPracticeName">Practice name</label>
-            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization">
+            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization" placeholder="e.g. Praktijk de Linde">
           </div>
           <div class="aweris-field">
-            <label for="ContactFormName">Name of owner, director, or decision-maker</label>
-            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name">
+            <label for="ContactFormName">Owner / decision-maker</label>
+            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name" placeholder="Full name">
           </div>
           <div class="aweris-field">
             <label for="ContactFormEmail">Email address</label>
-            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" required>
+            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" placeholder="name@practice.nl" required>
           </div>
           <div class="aweris-field">
             <label for="ContactFormPhone">Phone number</label>
-            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel">
+            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel" placeholder="+31 6 ...">
           </div>
           <div class="aweris-field aweris-field-wide">
             <label for="ContactFormMessage">Message</label>
-            <textarea id="ContactFormMessage" name="contact[body]"></textarea>
+            <textarea id="ContactFormMessage" name="contact[body]" placeholder="Tell us a little about your practice and what you&rsquo;d like to automate."></textarea>
           </div>
-          <button class="aweris-submit" type="submit">Submit button</button>
+          <button class="aweris-submit" type="submit">Send my details <span aria-hidden="true">&rarr;</span></button>
+          <p class="aweris-form-foot">We&rsquo;ll only use your details to get in touch about Aweris.</p>
         {% endform %}
       </div>
     </section>
@@ -1286,12 +1360,28 @@
           </a>
           <p class="aweris-footer-copy">Smart automation for mental healthcare practices. <span>Less administration. More time for care.</span></p>
         </div>
-        <div>
+        <nav aria-label="Footer navigation">
+          <p class="aweris-footer-title">Navigate</p>
           <div class="aweris-footer-links">
+            <a href="#home">Home</a>
+            <a href="#what-is-aweris">What is Aweris</a>
+            <a href="#features">Features</a>
+            <a href="#security">Security</a>
             <a href="#contact">Contact</a>
-            <a href="#home">Login</a>
+          </div>
+        </nav>
+        <div>
+          <p class="aweris-footer-title">Login</p>
+          <div class="aweris-footer-links">
+            <button class="aweris-footer-login" type="button">Bookkeeping App</button>
+            <button class="aweris-footer-login" type="button">Psychologists App</button>
+            <button class="aweris-footer-login" type="button">Client App</button>
           </div>
         </div>
+      </div>
+      <div class="aweris-footer-bottom">
+        <span>&copy; {{ 'now' | date: '%Y' }} Aweris &middot; Utrecht, NL</span>
+        <span>Privacy &amp; security wording confirmed before publication.</span>
       </div>
     </div>
   </footer>
