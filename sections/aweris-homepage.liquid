@@ -55,42 +55,48 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    color: var(--aweris-orange);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(34px, 5vw, 48px);
-    line-height: .86;
-    letter-spacing: -.06em;
     text-decoration: none;
   }
 
-  #shopify-section-{{ section.id }} .aweris-logo::before,
-  #shopify-section-{{ section.id }} .aweris-logo::after {
-    content: "";
+  #shopify-section-{{ section.id }} .aweris-logo img {
+    width: clamp(124px, 18vw, 178px);
+    height: auto;
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-sr {
     position: absolute;
-    background: var(--aweris-yellow);
-    border-radius: 70% 30% 60% 40%;
-  }
-
-  #shopify-section-{{ section.id }} .aweris-logo::before {
-    width: 18px;
-    height: 12px;
-    left: 6px;
-    top: -5px;
-    transform: rotate(18deg);
-  }
-
-  #shopify-section-{{ section.id }} .aweris-logo::after {
-    width: 16px;
-    height: 14px;
-    right: 5px;
-    top: 8px;
-    transform: rotate(-8deg);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 
   #shopify-section-{{ section.id }} .aweris-menu {
     display: flex;
     align-items: center;
     gap: 14px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--aweris-blue);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--aweris-blue);
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    margin: 4px auto;
+    background: currentColor;
+    border-radius: 999px;
   }
 
   #shopify-section-{{ section.id }} .aweris-menu a,
@@ -158,6 +164,44 @@
     background: rgba(244, 238, 223, .76);
     text-align: left;
     cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-app {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-swatch {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(233, 78, 26, .12);
+    color: var(--aweris-orange);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-app:nth-child(2) .aweris-swatch {
+    background: rgba(59, 64, 88, .12);
+    color: var(--aweris-blue);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-app:nth-child(3) .aweris-swatch {
+    background: rgba(233, 225, 30, .28);
+    color: #9a6a10;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-copy {
+    display: grid;
+    gap: 2px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-login-copy span {
+    color: var(--aweris-muted);
+    font-size: 12px;
+    font-weight: 700;
   }
 
   #shopify-section-{{ section.id }} .aweris-login-option:hover,
@@ -382,6 +426,48 @@
     font-weight: 800;
   }
 
+  #shopify-section-{{ section.id }} .aweris-strip {
+    background: var(--aweris-blue);
+    color: #fff;
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-strip-track {
+    width: max-content;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 18px 0;
+    animation: aweris-marquee 34s linear infinite;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-strip-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, .9);
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-strip-item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--aweris-yellow);
+    box-shadow:
+      8px 0 0 var(--aweris-yellow),
+      4px 7px 0 var(--aweris-yellow),
+      4px -7px 0 var(--aweris-yellow);
+  }
+
+  @keyframes aweris-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
   #shopify-section-{{ section.id }} .aweris-section {
     padding: 86px 0;
   }
@@ -481,6 +567,15 @@
     height: 260px;
     border: 14px solid rgba(233, 78, 26, .18);
     border-radius: 58% 42% 52% 48%;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-bloom {
+    position: absolute;
+    right: -54px;
+    bottom: -76px;
+    width: min(260px, 48%);
+    opacity: .2;
+    pointer-events: none;
   }
 
   #shopify-section-{{ section.id }} .aweris-principle-label {
@@ -682,23 +777,44 @@
     line-height: 1.65;
   }
 
+  #shopify-section-{{ section.id }} .aweris-contact-intro {
+    position: relative;
+  }
+
   #shopify-section-{{ section.id }} .aweris-contact-details {
     display: grid;
     gap: 14px;
     margin-top: 34px;
-    color: #fff;
-    font-weight: 800;
   }
 
-  #shopify-section-{{ section.id }} .aweris-contact-details span::before {
-    content: "";
-    display: inline-block;
+  #shopify-section-{{ section.id }} .aweris-contact-details a,
+  #shopify-section-{{ section.id }} .aweris-contact-details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact-icon {
     width: 26px;
     height: 26px;
-    margin-right: 10px;
+    display: grid;
+    place-items: center;
     border-radius: 8px;
     background: rgba(233, 225, 30, .16);
-    vertical-align: middle;
+    color: var(--aweris-yellow);
+    font-size: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-contact-bloom {
+    position: absolute;
+    left: -36px;
+    bottom: -88px;
+    width: min(190px, 40vw);
+    opacity: .16;
+    pointer-events: none;
   }
 
   #shopify-section-{{ section.id }} .aweris-form {
@@ -760,6 +876,14 @@
     grid-column: 1 / -1;
     color: var(--aweris-blue);
     font-weight: 800;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-form-foot {
+    grid-column: 1 / -1;
+    color: var(--aweris-muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
   }
 
   #shopify-section-{{ section.id }} .aweris-footer {
@@ -847,19 +971,39 @@
     }
 
     #shopify-section-{{ section.id }} .aweris-nav {
-      align-items: flex-start;
-      flex-direction: column;
+      align-items: center;
+      flex-direction: row;
       padding: 14px 0;
     }
 
+    #shopify-section-{{ section.id }} .aweris-nav-toggle {
+      display: block;
+    }
+
     #shopify-section-{{ section.id }} .aweris-menu {
-      width: 100%;
-      justify-content: space-between;
-      gap: 6px;
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      top: calc(100% + 8px);
+      width: auto;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      padding: 12px;
+      border: 1px solid var(--aweris-line);
+      border-radius: 12px;
+      background: var(--aweris-card);
+      box-shadow: var(--aweris-shadow);
+    }
+
+    #shopify-section-{{ section.id }} .aweris-menu.is-open {
+      display: flex;
     }
 
     #shopify-section-{{ section.id }} .aweris-menu a,
     #shopify-section-{{ section.id }} .aweris-login-summary {
+      justify-content: center;
       padding: 8px 10px;
       font-size: 13px;
     }
@@ -898,20 +1042,41 @@
       flex-direction: column;
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ section.id }} .aweris-strip-track {
+      animation: none;
+    }
+  }
 </style>
 
 <div class="aweris-page" id="home">
   <header class="aweris-header">
     <div class="aweris-container aweris-nav">
-      <a class="aweris-logo" href="#home" aria-label="Aweris home">Aweris</a>
-      <nav class="aweris-menu" aria-label="Main navigation">
+      <a class="aweris-logo" href="#home" aria-label="Aweris home">
+        <img src="{{ 'aweris-logo.png' | asset_url }}" alt="Aweris" width="1100" height="205">
+        <span class="aweris-sr">Aweris</span>
+      </a>
+      <button class="aweris-nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="aweris-menu-{{ section.id }}">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="aweris-menu" id="aweris-menu-{{ section.id }}" aria-label="Main navigation">
         <a href="#home">Home</a>
         <details class="aweris-login">
           <summary class="aweris-login-summary">Login</summary>
           <div class="aweris-login-panel" role="group" aria-label="Login destinations">
-            <button class="aweris-login-option" type="button">Bookkeeping App</button>
-            <button class="aweris-login-option" type="button">Psychologists App</button>
-            <button class="aweris-login-option" type="button">Client App</button>
+            <button class="aweris-login-option aweris-login-app" type="button">
+              <span class="aweris-swatch">01</span>
+              <span class="aweris-login-copy"><strong>Bookkeeping App</strong><span>Invoices &amp; Exact workflows</span></span>
+            </button>
+            <button class="aweris-login-option aweris-login-app" type="button">
+              <span class="aweris-swatch">02</span>
+              <span class="aweris-login-copy"><strong>Psychologists App</strong><span>Reporting &amp; case management</span></span>
+            </button>
+            <button class="aweris-login-option aweris-login-app" type="button">
+              <span class="aweris-swatch">03</span>
+              <span class="aweris-login-copy"><strong>Client App</strong><span>Dossier, homework &amp; e-health</span></span>
+            </button>
           </div>
         </details>
         <a href="#contact">Contact</a>
@@ -947,6 +1112,23 @@
       </div>
     </section>
 
+    <div class="aweris-strip" aria-hidden="true">
+      <div class="aweris-strip-track">
+        <span class="aweris-strip-item">Bookkeeping</span>
+        <span class="aweris-strip-item">Questionnaires</span>
+        <span class="aweris-strip-item">Reporting</span>
+        <span class="aweris-strip-item">Email handling</span>
+        <span class="aweris-strip-item">Scheduling</span>
+        <span class="aweris-strip-item">Dashboards</span>
+        <span class="aweris-strip-item">Bookkeeping</span>
+        <span class="aweris-strip-item">Questionnaires</span>
+        <span class="aweris-strip-item">Reporting</span>
+        <span class="aweris-strip-item">Email handling</span>
+        <span class="aweris-strip-item">Scheduling</span>
+        <span class="aweris-strip-item">Dashboards</span>
+      </div>
+    </div>
+
     <section class="aweris-section" id="what-is-aweris" aria-labelledby="aweris-about-title">
       <div class="aweris-container aweris-about-grid">
         <div>
@@ -981,6 +1163,7 @@
         <aside class="aweris-principle">
           <p>&ldquo;AI and automation support the work &mdash; but the <em>healthcare professional</em> always decides what is included in clinical reports and client communication.&rdquo;</p>
           <span class="aweris-principle-label">The Aweris operating principle</span>
+          <img class="aweris-bloom" src="{{ 'aweris-bloom-about.png' | asset_url }}" alt="" aria-hidden="true" width="898" height="1100">
         </aside>
       </div>
     </section>
@@ -1078,38 +1261,48 @@
 
     <section class="aweris-section aweris-contact" id="contact" aria-labelledby="aweris-contact-title">
       <div class="aweris-container aweris-contact-grid">
-        <div>
+        <div class="aweris-contact-intro">
           <p class="aweris-kicker">Get in touch</p>
           <h2 id="aweris-contact-title">Interested in automating your practice's admin?</h2>
           <p class="aweris-contact-text">Leave your details and we'll contact you to talk through how Aweris fits your practice. No obligation.</p>
+          <div class="aweris-contact-details">
+            <a href="mailto:hello@aweris.nl"><span class="aweris-contact-icon">@</span>hello@aweris.nl</a>
+            <span><span class="aweris-contact-icon">+</span>+31 (0)30 000 0000</span>
+            <span><span class="aweris-contact-icon">NL</span>Utrecht, Netherlands</span>
+          </div>
+          <img class="aweris-contact-bloom" src="{{ 'aweris-bloom-contact.png' | asset_url }}" alt="" aria-hidden="true" width="1100" height="1084">
         </div>
 
         {% form 'contact', class: 'aweris-form' %}
+          {% if form.posted_successfully? %}
+            <p class="aweris-form-status">Thank you. We'll be in touch.</p>
+          {% endif %}
           {% if form.errors %}
             <p class="aweris-form-status">{{ form.errors | default_errors }}</p>
           {% endif %}
 
           <div class="aweris-field">
             <label for="ContactFormPracticeName">Practice name</label>
-            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization">
+            <input id="ContactFormPracticeName" type="text" name="contact[Practice name]" autocomplete="organization" placeholder="e.g. Praktijk de Linde">
           </div>
           <div class="aweris-field">
             <label for="ContactFormName">Owner / decision-maker</label>
-            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name">
+            <input id="ContactFormName" type="text" name="contact[name]" autocomplete="name" placeholder="Full name">
           </div>
           <div class="aweris-field">
             <label for="ContactFormEmail">Email address</label>
-            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" required>
+            <input id="ContactFormEmail" type="email" name="contact[email]" autocomplete="email" placeholder="name@practice.nl" required>
           </div>
           <div class="aweris-field">
             <label for="ContactFormPhone">Phone number</label>
-            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel">
+            <input id="ContactFormPhone" type="tel" name="contact[phone]" autocomplete="tel" placeholder="+31 6 ...">
           </div>
           <div class="aweris-field aweris-field-wide">
             <label for="ContactFormMessage">Message</label>
-            <textarea id="ContactFormMessage" name="contact[body]"></textarea>
+            <textarea id="ContactFormMessage" name="contact[body]" placeholder="Tell us a little about your practice and what you'd like to automate."></textarea>
           </div>
           <button class="aweris-submit" type="submit">Send my details</button>
+          <p class="aweris-form-foot">We'll only use your details to get in touch about Aweris.</p>
         {% endform %}
       </div>
     </section>
@@ -1119,7 +1312,10 @@
     <div class="aweris-container">
       <div class="aweris-footer-grid">
         <div>
-          <a class="aweris-logo" href="#home" aria-label="Aweris home">Aweris</a>
+          <a class="aweris-logo" href="#home" aria-label="Aweris home">
+            <img src="{{ 'aweris-logo.png' | asset_url }}" alt="Aweris" width="1100" height="205">
+            <span class="aweris-sr">Aweris</span>
+          </a>
           <p class="aweris-footer-copy">Smart automation for mental healthcare practices. <span>Less administration. More time for care.</span></p>
         </div>
         <nav aria-label="Footer navigation">
@@ -1148,6 +1344,36 @@
     </div>
   </footer>
 </div>
+
+<script>
+  (() => {
+    const root = document.getElementById('shopify-section-{{ section.id }}');
+    if (!root) return;
+
+    const toggle = root.querySelector('.aweris-nav-toggle');
+    const menu = root.querySelector('.aweris-menu');
+
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    document.addEventListener('click', (event) => {
+      root.querySelectorAll('.aweris-login[open]').forEach((details) => {
+        if (!details.contains(event.target)) details.removeAttribute('open');
+      });
+    });
+  })();
+</script>
 
 {% schema %}
 {
