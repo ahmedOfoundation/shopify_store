@@ -1,0 +1,303 @@
+{% comment %}Aweris homepage section 09 - Final CTA. Paste into sections/aweris-final-cta.liquid{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} .aweris-section {
+    --aweris-orange: {{ section.settings.orange_color | default: '#E94E1A' }};
+    --aweris-yellow: {{ section.settings.yellow_color | default: '#E9E11E' }};
+    --aweris-blue: {{ section.settings.blue_color | default: '#3B4058' }};
+    --aweris-cream: {{ section.settings.cream_color | default: '#F4EEDF' }};
+    --aweris-white: #ffffff;
+    --aweris-text: {{ section.settings.text_color | default: '#222222' }};
+    --aweris-muted: {{ section.settings.muted_color | default: '#5F6270' }};
+    --aweris-radius: {{ section.settings.border_radius | default: 24 }}px;
+    --aweris-max: {{ section.settings.max_width | default: 1200 }}px;
+    color: var(--aweris-text);
+    background: {{ section.settings.background_color | default: '#F4EEDF' }};
+    overflow: hidden;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-container {
+    max-width: var(--aweris-max);
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top | default: 72 }}px 24px {{ section.settings.padding_bottom | default: 72 }}px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--aweris-orange);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-eyebrow:before {
+    content: "";
+    width: 34px;
+    height: 2px;
+    background: var(--aweris-orange);
+    display: inline-block;
+  }
+
+  #shopify-section-{{ section.id }} h1,
+  #shopify-section-{{ section.id }} h2,
+  #shopify-section-{{ section.id }} h3 {
+    margin: 0;
+    color: var(--aweris-blue);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+  }
+
+  #shopify-section-{{ section.id }} h1 {
+    font-size: clamp(42px, 7vw, 88px);
+  }
+
+  #shopify-section-{{ section.id }} h2 {
+    font-size: clamp(32px, 4.4vw, 58px);
+  }
+
+  #shopify-section-{{ section.id }} h3 {
+    font-size: clamp(22px, 2vw, 30px);
+  }
+
+  #shopify-section-{{ section.id }} p {
+    margin: 0;
+    color: var(--aweris-muted);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-lead {
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--aweris-text);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button:hover {
+    transform: translateY(-2px);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button-primary {
+    background: var(--aweris-orange);
+    color: var(--aweris-white);
+    box-shadow: 0 14px 30px rgba(233, 78, 26, .22);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-button-secondary {
+    background: rgba(255,255,255,.76);
+    color: var(--aweris-blue);
+    border-color: rgba(59, 64, 88, .16);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-card {
+    background: rgba(255,255,255,.82);
+    border: 1px solid rgba(59,64,88,.12);
+    border-radius: var(--aweris-radius);
+    padding: 28px;
+    box-shadow: 0 14px 38px rgba(59,64,88,.07);
+  }
+
+  #shopify-section-{{ section.id }} .aweris-card h3 {
+    margin-bottom: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  #shopify-section-{{ section.id }} .aweris-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 990px) {
+    #shopify-section-{{ section.id }} .aweris-grid-2,
+    #shopify-section-{{ section.id }} .aweris-grid-3,
+    #shopify-section-{{ section.id }} .aweris-split {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    #shopify-section-{{ section.id }} .aweris-container {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+    #shopify-section-{{ section.id }} .aweris-button {
+      width: 100%;
+    }
+  }
+</style>
+
+<section class="aweris-section">
+  <style>
+    #shopify-section-{{ section.id }} .aweris-cta {
+      text-align: center;
+      background:
+        radial-gradient(circle at 0 0, rgba(233,225,30,.35), transparent 30%),
+        white;
+      border-radius: calc(var(--aweris-radius) + 14px);
+      padding: 58px 28px;
+      border: 1px solid rgba(59,64,88,.10);
+    }
+    #shopify-section-{{ section.id }} .aweris-cta h2,
+    #shopify-section-{{ section.id }} .aweris-cta p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #shopify-section-{{ section.id }} .aweris-small {
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+  </style>
+
+  <div class="aweris-container">
+    <div class="aweris-cta">
+      {% if section.settings.eyebrow != blank %}<div class="aweris-eyebrow">{{ section.settings.eyebrow }}</div>{% endif %}
+      {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+      {% if section.settings.text != blank %}<div style="margin-top:20px;"><p class="aweris-lead">{{ section.settings.text }}</p></div>{% endif %}
+
+      <div class="aweris-button-row" style="justify-content:center;">
+        {% if section.settings.primary_label != blank %}<a class="aweris-button aweris-button-primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>{% endif %}
+        {% if section.settings.secondary_label != blank %}<a class="aweris-button aweris-button-secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>{% endif %}
+      </div>
+
+      {% if section.settings.disclaimer != blank %}
+        <div style="margin-top:26px;"><p class="aweris-small">{{ section.settings.disclaimer }}</p></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Aweris 09 Final CTA",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"Eyebrow","default":"Start with structure"},
+    {"type":"textarea","id":"heading","label":"Heading","default":"Bring intake, sessions, notes, plans, and patient follow-up into one guided platform."},
+    {"type":"textarea","id":"text","label":"Text","default":"For therapists and practices who want less administration, clearer continuity, and a more organized care journey."},
+    {"type":"text","id":"primary_label","label":"Primary button label","default":"Request a demo"},
+    {"type":"url","id":"primary_link","label":"Primary button link"},
+    {"type":"text","id":"secondary_label","label":"Secondary button label","default":"Enter with referral code"},
+    {"type":"url","id":"secondary_link","label":"Secondary button link"},
+    {"type":"textarea","id":"disclaimer","label":"Disclaimer","default":"Aweris supports therapists and care teams with workflow and documentation assistance. It does not replace therapy, clinical judgment, emergency care, or independent professional diagnosis."},
+
+    {
+      "type": "header",
+      "content": "Aweris brand settings"
+    },
+    {
+      "type": "color",
+      "id": "orange_color",
+      "label": "Orange",
+      "default": "#E94E1A"
+    },
+    {
+      "type": "color",
+      "id": "yellow_color",
+      "label": "Soft yellow",
+      "default": "#E9E11E"
+    },
+    {
+      "type": "color",
+      "id": "blue_color",
+      "label": "Deep blue",
+      "default": "#3B4058"
+    },
+    {
+      "type": "color",
+      "id": "cream_color",
+      "label": "Cream",
+      "default": "#F4EEDF"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background",
+      "default": "#F4EEDF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Main text",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Muted text",
+      "default": "#5F6270"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max content width",
+      "min": 900,
+      "max": 1500,
+      "step": 50,
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 20,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 20,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
+
+  ],
+  "presets": [
+    {
+      "name": "Aweris 09 Final CTA"
+    }
+  ]
+}
+{% endschema %}
